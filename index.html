@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      #pdf_frame {
+        display: none;
+      }
+      div#loading_icon, h2#error_message {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      h2#error_message {
+        display: none;
+      }
+      iframe {
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        bottom: 0; 
+        right: 0; 
+        width: 100%; 
+        height: 100%; 
+        border: none; 
+        margin: 0; 
+        padding: 0; 
+        overflow: hidden; 
+        z-index: 999999;
+      }
+    </style>
+  <body>
+    <!-- Not sure if I want to do a loading CSS instead -->
+    <div id="loading_icon">
+      <img src="loading.gif" height="32px" width="32px"></h2> 
+    </div>
+    <h2 id="error_message">Cannot load file, please try again or contact site owner.</h2> 
+    <iframe id="pdf_frame" width='100%' height='100%'></iframe>
+
+    <!-- Not bother to refactor a non-standard promise from promisejs/promise.js now -->
+    <script src="promisejs/promise.js"></script>
+    <script src="pdftex.js"></script>
+
+    <script>
+      const onError = () => {
+        document.getElementById('loading_icon').style.display = 'none';
+        document.getElementById('pdf_frame').style.display = 'none';
+        document.getElementById('error_message').style.display = 'flex';
+      };
+      const onErrorTimeout = setTimeout(onError, 10000);
+
+      const writePdfToIframe = (url) => {
+        clearTimeout(onErrorTimeout);
+
+        document.getElementById('loading_icon').style.display = 'none';
+        document.getElementById('pdf_frame').style.display = 'block';
+        document.getElementById('error_message').style.display = 'none';
+
+        document.getElementById('pdf_frame').src = url;
+
+      }
+
+      async function main() {
+        // const pdfUrlFromLocal = localStorage.getItem("__hkleungai__pdf_url");
+        // if (pdfUrlFromLocal) {
+        //   writePdfToIframe(pdfUrlFromLocal);
+        //   return;
+        // }
+
+        const latex_file = './HelloWorld.tex';
+        let latex_src;
+        try {
+          latex_src = await (await fetch(latex_file)).text();
+          latex_src = latex_src.replace(
+            /* regex */     
+            /\$\$\{[\s\S]*?\}\$\$/gm, 
+            
+            /* replacer */
+            s => eval(
+              s.replace(/\$\$\{([\s\S]*?)\}\$\$/m, '$1')
+            )
+          )
+          console.log("latex_src", latex_src);
+        }
+        catch (e) {
+          clearTimeout(onErrorTimeout);
+          onError();
+          console.error(e);
+          return;
+        }
+
+        const pdftex = new PDFTeX();
+  
+        pdftex.set_TOTAL_MEMORY(80*1024*1024).then(function() {
+          pdftex.FS_createLazyFile('/', 'snowden.jpg', 'snowden.jpg', true, true);
+  
+          console.time("Execution time");
+  
+          pdftex.compile(latex_src).then(function(pdf_dataurl) {
+            console.log("pdf_dataurl", pdf_dataurl)
+            console.timeEnd("Execution time");
+  
+            if (pdf_dataurl === false)
+              return;
+
+            localStorage.setItem("__hkleungai__pdf_url", pdf_dataurl);
+            writePdfToIframe(pdf_dataurl);
+          });
+        });
+      }
+
+      main()
+    </script>
+
+    <latex-script>
+    </latex-script>
+  </body>
+</html>
