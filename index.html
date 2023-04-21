@@ -447,11 +447,11 @@
     <script src="pdftex.js"></script>
 
     <script>
-      // 
       const isLocalHost = /localhost|[0-9]{1,4}\.[0-9]{1,4}\.[0-9]{1,4}\.[0-9]{1,4}|::1|\.local|^$/gi.test(window.location.hostname);
       const noCache = (new URL(document.location)).searchParams.has("no_cache");
 
-      const onErrorTimeoutDuration = 0.001 * 1000;
+      // Let's allow 30-second buffer to see if github.io can load everything on time.
+      const onErrorTimeoutDuration = 30 * 1000;
       const onError = () => {
         document.getElementById('loading_icon').style.display = 'none';
         document.getElementById('outerContainer').style.display = 'none';
