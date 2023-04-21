@@ -2,14 +2,27 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <title>CV = Latex + PDF.js</title>
+
+    <!-- This snippet is used in production (included from viewer.html) -->
+    <link rel="resource" type="application/l10n" href="locale/locale.properties">
+    <script src="build/pdf.js"></script>
+
+    <link rel="stylesheet" href="viewer.css">
+
+    <script src="viewer.js"></script>    
     <style>
-      div#loading_icon, h2#error_message {
+      div#loading_icon, div#error_message {
         height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 24px;
       }
-      h2#error_message {
+      div#error_message, div#outerContainer {
         display: none;
       }
       /* iframe {
@@ -27,24 +40,16 @@
         z-index: 999999;
       } */
     </style>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="google" content="notranslate">
-    <title>PDF.js viewer</title>
-
-    <!-- This snippet is used in production (included from viewer.html) -->
-    <link rel="resource" type="application/l10n" href="locale/locale.properties">
-    <script src="build/pdf.js"></script>
-
-    <link rel="stylesheet" href="viewer.css">
-
-    <script src="viewer.js"></script>    
+  </head>
   <body tabindex="1">
     <!-- Not sure if I want to do a loading CSS instead -->
     <div id="loading_icon">
       <img src="loading.gif" height="32px" width="32px"></h2> 
     </div>
-    <h2 id="error_message">Cannot load file, please try again or contact site owner.</h2> 
+    <div id="error_message">
+      <h2>It may still takes some time. Please be patient, or contact site owner for help.</h2>
+      <img src="loading.gif" height="32px" width="32px"></h2>
+    </div> 
     <div id="outerContainer">
 
       <div id="sidebarContainer">
@@ -442,19 +447,20 @@
     <script src="pdftex.js"></script>
 
     <script>
-      // 
       const isLocalHost = /localhost|[0-9]{1,4}\.[0-9]{1,4}\.[0-9]{1,4}\.[0-9]{1,4}|::1|\.local|^$/gi.test(window.location.hostname);
       const noCache = (new URL(document.location)).searchParams.has("no_cache");
 
+      // Let's allow 30-second buffer to see if github.io can load everything on time.
+      const onErrorTimeoutDuration = 30 * 1000;
       const onError = () => {
         document.getElementById('loading_icon').style.display = 'none';
         document.getElementById('outerContainer').style.display = 'none';
         document.getElementById('error_message').style.display = 'flex';
       };
-      const onErrorTimeout = setTimeout(onError, 10000);
+      const onErrorTimer = setTimeout(onError, onErrorTimeoutDuration);
 
       const writePdfToIframe = (url) => {
-        clearTimeout(onErrorTimeout);
+        clearTimeout(onErrorTimer);
 
         document.getElementById('loading_icon').style.display = 'none';
         document.getElementById('error_message').style.display = 'none';
@@ -490,7 +496,7 @@
           );
         }
         catch (e) {
-          clearTimeout(onErrorTimeout);
+          clearTimeout(onErrorTimer);
           onError();
           console.error(e);
           return;
@@ -507,7 +513,7 @@
             console.timeEnd("Execution time");
   
             if (pdf_dataurl === false) {
-              clearTimeout(onErrorTimeout);
+              clearTimeout(onErrorTimer);
               onError();              
               return;
             }
