@@ -21,21 +21,20 @@
   % This is a comment, not shown in final output.
   % The following shows typesetting power of LaTeX:
   \begin{align}
-    E_0 &= mc^2                              \\
     E &= \frac{mc^2}{\sqrt{1-\frac{v^2}{c^2}}}
   \end{align}
 
 
-  \TeX{}live.js even supports images! This photo was taken by Laura Poitras/Praxis Films
+  \TeX{}live.js even supports images!
 
   \includegraphics[height=5cm, keepaspectratio]{snowden}
 
-  And of course we can have inline formula; $y = \sin x$.
+  We also support REAL javascript here, which will then get transpiled into valid latex syntax!!
 
   \begin{center}
-    \begin{tabular}{ |$${
-      'c'.repeat(3).split('').join('|')
-      }$$| } 
+    \begin{tabular}{ $${
+      '|' + 'c'.repeat(3).split('').join('|') + '|'
+    }$$ } 
       \hline
       $${
         [[1,2,3], [4,5,6], [7,8,9]]
