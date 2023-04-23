@@ -1,0 +1,143 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{ifxetex,ifluatex}
+
+
+\newif\ifxetexorluatex
+\ifxetex
+\xetexorluatextrue
+\else
+\ifluatex
+\xetexorluatextrue
+\else
+\xetexorluatexfalse
+\fi
+\fi
+
+%%%%Taken from moderncv.cls
+\newcommand*{\listitemsymbol}           {\labelitemi~}
+\newcommand*{\addresssymbol}            {}
+\newcommand*{\bornsymbol}               {}
+\newcommand*{\mobilephonesymbol}        {}
+\newcommand*{\fixedphonesymbol}         {}
+\newcommand*{\faxphonesymbol}           {}
+\newcommand*{\emailsymbol}              {}
+\newcommand*{\homepagesymbol}           {}
+\newcommand*{\linkedinsocialsymbol}     {}
+\newcommand*{\xingsocialsymbol}         {}
+\newcommand*{\twittersocialsymbol}      {}
+\newcommand*{\githubsocialsymbol}       {}
+\newcommand*{\gitlabsocialsymbol}       {}
+\newcommand*{\stackoverflowsocialsymbol}{}
+\newcommand*{\bitbucketsocialsymbol}    {}
+\newcommand*{\skypesocialsymbol}        {}
+\newcommand*{\orcidsocialsymbol}        {}
+\newcommand*{\researchgatesocialsymbol} {}
+\newcommand*{\researcheridsocialsymbol} {}
+\newcommand*{\googlescholarsocialsymbol}{}
+\newcommand*{\telegramsocialsymbol}     {}
+\newcommand*{\whatsappsocialsymbol}     {}
+\newcommand*{\matrixsocialsymbol}       {}
+\newcommand*{\signalsocialsymbol}       {}
+
+% \usepackage{moderncviconssymbols}
+%%%%Taken from moderncv.cls
+\definecolor{color2}{rgb}{0,0,0}
+
+\usepackage{geometry}
+\geometry{letterpaper, margin=1in}
+
+\usepackage[dvipsnames]{color}
+
+% \makeatletter
+% \let\old@rule\@rule
+% \def\@rule[#1]#2#3{\textcolor{rulecolor}{\old@rule[#1]{#2}{#3}}}
+% \makeatother
+
+% \usepackage{setspace}
+% \onehalfspacing
+
+\linespread{1.3}
+
+\usepackage{color}
+
+\setlength{\parindent}{24pt}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{amethyst}{rgb}{0.6, 0.4, 0.8}
+\definecolor{darkviolet}{rgb}{0.58, 0.0, 0.83}
+\definecolor{chromeyellow}{rgb}{1.0, 0.65, 0.0}
+\definecolor{terminalgreen}{rgb}{0.16, 1, 0}
+\definecolor{brightblack}{rgb}{0.33, 0.34, 0.32}
+\definecolor{parisgreen}{rgb}{0.31, 0.78, 0.47}
+
+\newcommand{\subheading}[1]{\subsubsection*{\color{darkviolet}{{#1}}}}
+\newcommand{\heading}[1]{\section*{\color{chromeyellow}{{#1}}}}
+
+\setlength{\fboxrule}{1pt}
+
+\begin{document}
+
+\begin{center}
+    \colorbox{black}{\textbf{\LARGE \color{terminalgreen}{LEUNG Hang Kam, Jimmy}}}
+\end{center}
+
+\def\mobile{\leavevmode\hbox to7bp{\kern1bp \lower1bp\vbox to12bp{}%
+    \pdfliteral{q 0 g 0 G 1 j 2 w 0 0 5 10 re B
+       1 g 1 G 1 w .3 1.8 4.4 7 re B 
+       1.5 w 2.5 .2 0 .1 re B .3 w 1.7 10 1.6 0 re B Q}%
+    \hss}}
+
+\heading{Contact Information}
+\begin{itemize}
+    \item \textbf{Phone:} (852) 9792-3998 %\mobile
+    \item \textbf{Email:} \href{mailto:jimmy.leung.hk@outlook.com}{jimmy.leung.hk@outlook.com}
+	\item \textbf{Personal Page:} \href{https://hkleungai.github.io}{\url{https://hkleungai.github.io}}
+	\item \textbf{LinkedIn:} \href{https://www.linkedin.com/in/jimmy-leung-b20253272}{\url{https://www.linkedin.com/in/jimmy-leung-b20253272}}
+    \item \textbf{GitHub:} \href{https://github.com/hkleungai}{\url{https://github.com/hkleungai}}
+\end{itemize}
+
+\heading{Summary}
+I am a Software Engineer with 3 years$'$ experience in enterprise-scaled web applications.
+I possess a strong passion for pursuing algorithmic training and contributing to open-source projects.
+I am confident that my expertise can be of great value to your esteemed organization.
+
+$${(async () => {
+	let schema = await (await fetch('./work.experience.json')).json();
+	if (schema.type !== 'heading') {
+		throw new Error('non-heading is not allowed to start a section');
+	}
+	return json_schema_to_latex(schema);
+})()}$$
+
+$${(async () => {
+	let schema = await (await fetch('./education.history.json')).json();
+	if (schema.type !== 'heading') {
+		throw new Error('non-heading is not allowed to start a section');
+	}
+	return json_schema_to_latex(schema);
+})()}$$
+
+$${(async () => {
+	let schema = await (await fetch('./skill.metrics.json')).json();
+	if (schema.type !== 'heading') {
+		throw new Error('non-heading is not allowed to start a section');
+	}
+    console.log(json_schema_to_latex(schema));
+	return json_schema_to_latex(schema);
+})()}$$
+
+
+\end{document}

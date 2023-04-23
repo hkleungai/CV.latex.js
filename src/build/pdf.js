@@ -4301,7 +4301,10 @@ function getFilenameFromUrl(url, onlyStripPath = false) {
   }
   return url.substring(url.lastIndexOf("/") + 1);
 }
-function getPdfFilenameFromUrl(url, defaultFilename = "document.pdf") {
+function getPdfFilenameFromUrl(
+  url, 
+  defaultFilename = `CV-as-of-${new Date().toISOString().split('T')[0]}.pdf`,
+) {
   if (typeof url !== "string") {
     return defaultFilename;
   }
