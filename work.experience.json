@@ -1,0 +1,144 @@
+{
+    "type": "heading",
+    "label": ["Work Experience"],
+    "elements": [
+        {
+            "type": "subheading",
+            "label": [
+                "Coherent Capital Advisors",
+                "Software Developer Intern, Jun 2019 - Aug 2020",
+                "Frontend Software Engineer, Jul 2021 - Apr 2023"
+            ],
+            "elements": [
+                {
+                    "type": "ol",
+                    "elements": [
+                        {
+                            "type": "ul",
+                            "label": [
+                                "Helped on developing an online Point of Sale system",
+                                "namely \\textit{Coherent Flow}"
+                            ],
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Helping implement Form logic in \\textbf{Typescript}, \\textbf{React} and \\textbf{Redux}."
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Collaborating with designers for customizing UI Theming in \\textbf{Ant Design}"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Helping implement Form UI in \\textbf{SCSS} and \\textbf{Styled-Components}"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Helping refine the form (co)editing and sharing features,",
+                                        "with help from \\textbf{Socket.io}, Automerge, and qrcode Libraries"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Helping implement internalization (i18n) for multilingual clients"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Helping analyze legacy API to enhance data processing capabilities"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ul",
+                            "label": [
+                                "Helped on revamping Coherent Flow as another major product \\textit{Spark Forms}"
+                            ],
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "\\fbox{Solely} developing an \\textbf{iframe solution}",
+                                        "for external domain access."
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "\\fbox{Solely} (re)implementing UI components",
+                                        "by utilizing \\textbf{React Storybook} and \\textbf{PDF.js}"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Helping rewrite UI theming logic for Ant Design v4 with \\textbf{LESS.js}"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Helping develop a demo playground",
+                                        "featuring a real-time \\textbf{JSON Schema} editor,",
+                                        "which enables seamless modification of form UI and translation elements"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Helping migrate user management service to Single Sign On (SSO) solution",
+                                        "using technologies like \\textbf{JSON Web Tokens (JWT)} and \\textbf{OAuth 2.0}"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Helping implement a new API client SDK which unifies micro-services handling"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ul",
+                            "label": [
+                                "Helped on enhancing code quality and application performance"
+                            ],
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Helping write and refine unit tests",
+                                        "using \\textbf{Jest} and \\textbf{React Resting Library}"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Helping implement type-safe component in necessary utils and components."
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "\\fbox{Solely} open pull requests to open-source \\textbf{DefinitelyTyped} project",
+                                        "in order to fix types from (legacy) third party library."
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

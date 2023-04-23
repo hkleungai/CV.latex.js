@@ -1,0 +1,210 @@
+{
+    "type": "heading",
+    "label": ["Skills"],
+    "elements": [
+        {
+            "type": "spaced-collection",
+            "elements": [
+                {
+                    "type": "skill-table",
+                    "label": ["Web Frontend"],
+                    "elements": [
+                        {
+                            "type": "skill-row",
+                            "label": ["TypeScript"],
+                            "options": {
+                                "proficiency": 0.95
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["React FC / Testing Library"],
+                            "options": {
+                                "proficiency": 0.9
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["Redux ToolKit"],
+                            "options": {
+                                "proficiency": 0.9
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["SCSS / LESS"],
+                            "options": {
+                                "proficiency": 0.8
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["Ant Design"],
+                            "options": {
+                                "proficiency": 0.8
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["Material UI"],
+                            "options": {
+                                "proficiency": 0.45
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["Socket.io"],
+                            "options": {
+                                "proficiency": 0.75
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "skill-table",
+                    "label": ["Backend"],
+                    "elements": [
+                        {
+                            "type": "skill-row",
+                            "label": ["Node.js"],
+                            "options": {
+                                "proficiency": 0.9
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["RESTful API"],
+                            "options": {
+                                "proficiency": 0.85
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["Express.js"],
+                            "options": {
+                                "proficiency": 0.8
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["PHP"],
+                            "options": {
+                                "proficiency": 0.35
+                            }
+                        },                        
+                        {
+                            "type": "skill-row",
+                            "label": ["MongoDB"],
+                            "options": {
+                                "proficiency": 0.70
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["Sqlite"],
+                            "options": {
+                                "proficiency": 0.65
+                            }
+                        },                        {
+                            "type": "skill-row",
+                            "label": ["SQL"],
+                            "options": {
+                                "proficiency": 0.70
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": [".Net 6 Web API"],
+                            "options": {
+                                "proficiency": 0.2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "skill-table",
+                    "label": ["CI / Deployment"],
+                    "elements": [
+                        {
+                            "type": "skill-row",
+                            "label": ["Github Actions"],
+                            "options": {
+                                "proficiency": 0.85
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["Github Pages"],
+                            "options": {
+                                "proficiency": 0.85
+                            }
+                        }
+                   ]
+                },
+                {
+                    "type": "skill-table",
+                    "label": ["Others / Hobbies"],
+                    "elements": [
+                        {
+                            "type": "skill-row",
+                            "label": ["Microsoft Office"],
+                            "options": {
+                                "proficiency": 0.7
+                            }
+                        },                        
+                        {
+                            "type": "skill-row",
+                            "label": ["C / C++"],
+                            "options": {
+                                "proficiency": 0.8
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["Java"],
+                            "options": {
+                                "proficiency": 0.45
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["Python3"],
+                            "options": {
+                                "proficiency": 0.85
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["Wasm / Wasi SDK"],
+                            "options": {
+                                "proficiency": 0.4
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["Maths / Latex"],
+                            "options": {
+                                "proficiency": 1
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["Coding Challenge (Leetcode)"],
+                            "options": {
+                                "proficiency": 1
+                            }
+                        },
+                        {
+                            "type": "skill-row",
+                            "label": ["Tech Stream / Channel"],
+                            "options": {
+                                "proficiency": 1
+                            }
+                        }
+                    ]
+                }
+
+            ]
+        }
+    ]
+}

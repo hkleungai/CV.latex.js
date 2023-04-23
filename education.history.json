@@ -1,0 +1,76 @@
+{
+    "type": "heading",
+    "label": ["Education"],
+    "elements": [
+        {
+            "type": "subheading",
+            "label": [
+                "Bachelor of Engineering in Computer Science",
+                "The Hong Kong University of Science and Technology"
+            ],
+            "elements": [
+                {
+                    "type": "ul",
+                    "elements": [
+                        {
+                            "type": "text",
+                            "label": [
+                                "Achieved Second Class Honors"
+                            ]
+                        },
+                        {
+                            "type": "ul",
+                            "label": [
+                                "Final Year Project on News Summarization"
+                            ],
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Keywords:",
+                                        "Web Scraping",
+                                        "Supervised Classification",
+                                        "Text Summarization"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "label": [
+                                "Taken courses on \textbf{Relation Database},\textbf{Web Programming}, etc"
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "label": [
+                                "Performed duty as a lab helper on Introductory Python courses for several semesters."
+                            ]
+                        }
+                    ]
+                }        
+            ]
+        },
+        {
+            "type": "subheading",
+            "label": [
+                "HKDSE Graduate",
+                "N.T. Heung Yee Kuk Yuen Long District Secondary School"
+            ],
+            "elements": [
+                {
+                    "type": "ul",
+                    "elements": [
+                        {
+                            "type": "text",
+                            "label": [
+                                "Obtain 5* in Mathematics Compulsory Part",
+                                "and 5** in Extended Part M2"
+                            ]
+                        }
+                    ]
+                }       
+            ]
+        }
+    ]
+}

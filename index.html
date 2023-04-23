@@ -6,14 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="google" content="notranslate">
     <title>CV = Latex + PDF.js</title>
-
     <!-- This snippet is used in production (included from viewer.html) -->
     <link rel="resource" type="application/l10n" href="locale/locale.properties">
-    <script src="build/pdf.js"></script>
-
     <link rel="stylesheet" href="viewer.css">
-
-    <script src="viewer.js"></script>    
     <style>
       div#loading_icon, div#error_message {
         height: 100vh;
@@ -442,92 +437,17 @@
   
     <input type="file" id="fileInput" class="hidden">  
 
+    <script src="build/pdf.js"></script>
+    <script src="viewer.js"></script>    
+
     <!-- Not bother to refactor a non-standard promise from promisejs/promise.js now -->
     <script src="promisejs/promise.js"></script>
     <script src="pdftex.js"></script>
 
-    <script>
-      const isLocalHost = /localhost|[0-9]{1,4}\.[0-9]{1,4}\.[0-9]{1,4}\.[0-9]{1,4}|::1|\.local|^$/gi.test(window.location.hostname);
-      const noCache = (new URL(document.location)).searchParams.has("no_cache");
-
-      // Let's allow 30-second buffer to see if github.io can load everything on time.
-      const onErrorTimeoutDuration = 30 * 1000;
-      const onError = () => {
-        document.getElementById('loading_icon').style.display = 'none';
-        document.getElementById('outerContainer').style.display = 'none';
-        document.getElementById('error_message').style.display = 'flex';
-      };
-      const onErrorTimer = setTimeout(onError, onErrorTimeoutDuration);
-
-      const writePdfToIframe = (url) => {
-        clearTimeout(onErrorTimer);
-
-        document.getElementById('loading_icon').style.display = 'none';
-        document.getElementById('error_message').style.display = 'none';
-        document.getElementById('outerContainer').style.display = 'block';
-
-        viewPDF(url);
-      }
-
-      async function main() {
-        // No caching for local development
-        if (isLocalHost || noCache) {
-          localStorage.setItem("__hkleungai__pdf_url", null)
-        }
-        else {
-          const pdfUrlFromLocal = localStorage.getItem("__hkleungai__pdf_url");
-          if (pdfUrlFromLocal) {
-            writePdfToIframe(pdfUrlFromLocal);
-            return;
-          }
-        }
-
-        const latex_file = './HelloWorld.tex';
-        let latex_src;
-        try {
-          latex_src = (await (await fetch(latex_file)).text()).replace(
-            /* regex */     
-            /\$\$\{[\s\S]*?\}\$\$/gm, 
-            
-            /* replacer */
-            s => eval(
-              s.replace(/\$\$\{([\s\S]*?)\}\$\$/m, '$1')
-            )
-          );
-        }
-        catch (e) {
-          clearTimeout(onErrorTimer);
-          onError();
-          console.error(e);
-          return;
-        }
-
-        const pdftex = new PDFTeX();
-  
-        pdftex.set_TOTAL_MEMORY(80 * 1024 * 1024).then(function() {
-          pdftex.FS_createLazyFile('/', 'snowden.jpg', 'snowden.jpg', true, true);
-  
-          console.time("Execution time");
-  
-          pdftex.compile(latex_src).then(function(pdf_dataurl) {
-            console.timeEnd("Execution time");
-  
-            if (pdf_dataurl === false) {
-              clearTimeout(onErrorTimer);
-              onError();              
-              return;
-            }
-
-            if (!isLocalHost) {
-              localStorage.setItem("__hkleungai__pdf_url", pdf_dataurl);
-            }
-            writePdfToIframe(pdf_dataurl);
-          });
-        });
-      }
-
-      main()
-    </script>
+    <script type="module">
+      import MainRunner from './MainRunner.js'; 
+      new MainRunner(viewPDF, "./CV.tex").run();
+  </script>
 
     <latex-script>
     </latex-script>
