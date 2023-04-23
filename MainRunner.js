@@ -66,7 +66,7 @@ export default class MainRunner {
         const defer = new DeferPromise();
 
         if (this.memoizedPdfUrl) {
-            writePdfToViewer(this.memoizedPdfUrl);
+            this.writePdfToViewer(this.memoizedPdfUrl);
             defer.resolve();
             return defer.promise;
         }
