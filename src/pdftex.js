@@ -6,6 +6,8 @@ var PDFTeX = function(opt_workerPath) {
   var self = this;
   var initialized = false;
 
+  var compile_p;
+
   self.on_stdout = function(msg) {
     console.log(msg);
   }
@@ -19,16 +21,24 @@ var PDFTeX = function(opt_workerPath) {
     var data = JSON.parse(ev.data);
     var msg_id;
 
-    if(!('command' in data))
+    if(!('command' in data)) {
       console.log("missing command!", data);
-    switch(data['command']) {
+      compile_p.done(false);
+      return;
+    }
+
+    switch (data['command']) {
       case 'ready':
         onready.done(true);
         break;
       case 'stdout':
-      case 'stderr':
+      case 'stderr': {
         self['on_'+data['command']](data['contents']);
+        if (/^! LaTeX Error: File .* not found.$/.test(data['contents'])) {
+          compile_p.done(false);
+        }
         break;
+      }
       default:
         //console.debug('< received', data);
         msg_id = data['msg_id'];
@@ -125,17 +135,17 @@ var PDFTeX = function(opt_workerPath) {
   }
 
   self.compile = function(source_code) {
-    var p = new promise.Promise();
+    compile_p = new promise.Promise();
 
     self.compileRaw(source_code).then(function(binary_pdf) {
       if(binary_pdf === false)
-        return p.done(false);
+        return compile_p.done(false);
 
       pdf_dataurl = 'data:application/pdf;charset=binary;base64,' + window.btoa(binary_pdf);
 
-      return p.done(pdf_dataurl);
+      return compile_p.done(pdf_dataurl);
     });
-    return p;
+    return compile_p;
   }
 
   self.compileRaw = function(source_code) {
@@ -163,7 +173,6 @@ var PDFTeX = function(opt_workerPath) {
     };
 
     var getPDF = function() {
-      console.log(arguments);
       return self.FS_readFile('/input.pdf');
     }
 

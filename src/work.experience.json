@@ -68,14 +68,14 @@
                                 {
                                     "type": "text",
                                     "label": [
-                                        "\\fbox{Solely} developing an \\textbf{iframe solution}",
+                                        "{Solely} developing an \\textbf{iframe solution}",
                                         "for external domain access."
                                     ]
                                 },
                                 {
                                     "type": "text",
                                     "label": [
-                                        "\\fbox{Solely} (re)implementing UI components",
+                                        "{Solely} (re)implementing UI components",
                                         "by utilizing \\textbf{React Storybook} and \\textbf{PDF.js}"
                                     ]
                                 },
@@ -130,7 +130,7 @@
                                 {
                                     "type": "text",
                                     "label": [
-                                        "\\fbox{Solely} open pull requests to open-source \\textbf{DefinitelyTyped} project",
+                                        "{Solely} open pull requests to open-source \\textbf{DefinitelyTyped} project",
                                         "in order to fix types from (legacy) third party library."
                                     ]
                                 }
