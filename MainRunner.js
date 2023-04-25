@@ -78,7 +78,7 @@ export default class MainRunner {
         }
 
         const pdftex = new PDFTeX();
-        pdftex.set_TOTAL_MEMORY(this.TOTAL_MEMORY).then(() => {    
+        pdftex.set_TOTAL_MEMORY(this.TOTAL_MEMORY).then(() => {
             pdftex.compile(transpiledLatexContent).then((pdf_dataurl) => {
                 if (!pdf_dataurl) {
                     defer.reject("Unknown PDFTeX error occurs");

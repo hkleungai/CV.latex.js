@@ -4303,7 +4303,7 @@ function getFilenameFromUrl(url, onlyStripPath = false) {
 }
 function getPdfFilenameFromUrl(
   url, 
-  defaultFilename = `CV-as-of-${new Date().toISOString().split('T')[0]}.pdf`,
+  defaultFilename = `CV-as-of-${new Intl.DateTimeFormat("fr-CA", { timeZone: "Asia/Hong_Kong" }).format(new Date())}.pdf`,
 ) {
   if (typeof url !== "string") {
     return defaultFilename;

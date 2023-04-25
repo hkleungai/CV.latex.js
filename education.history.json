@@ -28,17 +28,22 @@
                                     "type": "text",
                                     "label": [
                                         "Keywords:",
-                                        "Web Scraping",
-                                        "Supervised Classification",
+                                        "Web Scraping,",
+                                        "Supervised Classification,",
                                         "Text Summarization"
                                     ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "text",
-                            "label": [
-                                "Taken courses on \textbf{Relation Database},\textbf{Web Programming}, etc"
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Technology Stack:",
+                                        "TensorFlow,,",
+                                        "Keras,",
+                                        "Selenium,",
+                                        "MongoDB,",
+                                        "Express.js"
+                                    ]
+                                }                                
                             ]
                         },
                         {
