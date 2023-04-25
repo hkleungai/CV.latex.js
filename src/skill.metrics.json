@@ -105,7 +105,8 @@
                             "options": {
                                 "proficiency": 0.65
                             }
-                        },                        {
+                        },                        
+                        {
                             "type": "skill-row",
                             "label": ["SQL"],
                             "options": {

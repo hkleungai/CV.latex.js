@@ -54,6 +54,7 @@
 \setlength{\parindent}{24pt}
 
 \usepackage{hyperref}
+\urlstyle{sf}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -63,7 +64,7 @@
     pdfpagemode=FullScreen,
 }
 
-\renewcommand{\familydefault}{\rmdefault}
+\renewcommand{\familydefault}{\sfdefault}
 
 \definecolor{amethyst}{rgb}{0.6, 0.4, 0.8}
 \definecolor{darkviolet}{rgb}{0.58, 0.0, 0.83}
@@ -101,10 +102,12 @@
 
 \heading{Summary}
 I am a Software Engineer with 3 years$'$ experience in enterprise-scaled web applications.
-I possess a strong passion for pursuing algorithmic training and contributing to open-source projects.
-I am confident that my expertise can be of great value to your organization.
+I possess a strong passion for pursuing web programming and algorithmic training.
+I am confident that my expertise can be of great value to your esteemed organization.
 
 $${fetch('./work.experience.v2.json').then(_ => _.json()).then(json_schema_to_latex)}$$
+
+\newpage 
 
 $${fetch('./education.history.json').then(_ => _.json()).then(json_schema_to_latex)}$$
 
@@ -112,7 +115,11 @@ $${fetch('./skill.metrics.v2.json').then(_ => _.json()).then(json_schema_to_late
 
 \heading{Languages}
 
-Native Cantonese; Fluent English; Fluent Mandarin
+\begin{tabular}{p{3cm}p{5cm}p{10cm}}
+& Cantonese & Native \\
+& English & Skilled at work \\
+& Mandarin & Skilled at work
+\end{tabular}
 
 \heading{Remarks}
 
