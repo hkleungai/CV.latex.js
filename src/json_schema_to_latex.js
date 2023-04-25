@@ -1,4 +1,4 @@
-export default function json_schema_to_latex(schema) {
+export default function json_schema_to_latex(schema, parent = null) {
     if (schema.label && (!Array.isArray(schema.label) || schema.label.some(l => typeof l !== 'string'))) {
         throw new Error('Non-array / non-string label(s) is not allowed');
     }
@@ -6,11 +6,11 @@ export default function json_schema_to_latex(schema) {
         const label = schema.label.join('\n \\\\');
         return [
             "\\" + schema.type + "\{" + label + '}',
-            ...(schema.elements || []).map(json_schema_to_latex),
+            ...(schema.elements || []).map(elem => json_schema_to_latex(elem, schema)),
         ].join('\n');
     }
     if (schema.type === 'spaced-collection') {
-        return (schema.elements || []).map(json_schema_to_latex).join('%\n \\vspace{0.5cm} \\\\ %\n %\n')
+        return (schema.elements || []).map(elem => json_schema_to_latex(elem, schema)).join('%\n \\vspace{0.5cm} \\\\ %\n %\n')
     }
     const label = (schema.label || []).join('\n');
     if (schema.type === 'skill-table') {
@@ -19,7 +19,7 @@ export default function json_schema_to_latex(schema) {
             "\\hline",
             `\\rowcolor[gray]{0.8} \\textbf{${label}} & & \\\\`,
             "\\hline",
-            ...schema.elements.map(json_schema_to_latex),
+            ...schema.elements.map(elem => json_schema_to_latex(elem, schema)),
             "\\hline",
             "\\end{tabular}",
         ].join('\n')
@@ -43,18 +43,26 @@ export default function json_schema_to_latex(schema) {
     if (schema.type === 'ol') {
         return [
             label,
+            /^(ul|ol)$/.test(parent?.type) ? "\\vspace{-.5\\topsep}" : null,
             "\\begin{enumerate}",
-            ...schema.elements.map(elem => '\\item ' + json_schema_to_latex(elem)),
+            "\\setlength\\parsep{0pt}",
+            "\\setlength\\itemsep{0pt}",
+            ...schema.elements.map(elem => '\\item ' + json_schema_to_latex(elem, schema)),
             "\\end{enumerate}",
-        ].join('\n')
+            /^(ul|ol)$/.test(parent?.type) ? "\\vspace{-.5\\topsep}" : null,
+        ].filter(Boolean).join('\n');
     }
     if (schema.type === 'ul') {
         return [
             label,
+            /^(ul|ol)$/.test(parent?.type) ? "\\vspace{-.5\\topsep}" : null,
             "\\begin{itemize}",
-            ...(schema.elements || []).map(elem => '\\item ' + json_schema_to_latex(elem)),
+            "\\setlength\\parsep{0pt}",
+            "\\setlength\\itemsep{0pt}",
+            ...(schema.elements || []).map(elem => '\\item ' + json_schema_to_latex(elem, schema)),
             "\\end{itemize}",
-        ].join('\n')  
+            /^(ul|ol)$/.test(parent?.type) ? "\\vspace{-.5\\topsep}" : null,            
+        ].filter(Boolean).join('\n');
     }
     if (schema.type === 'text') {
         return label;

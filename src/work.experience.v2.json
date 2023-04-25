@@ -1,0 +1,93 @@
+{
+    "type": "heading",
+    "label": ["Work Experience"],
+    "elements": [
+        {
+            "type": "subheading",
+            "label": [
+                "Coherent Capital Advisors",
+                "Software Developer Intern, Jun 2019 - Aug 2020",
+                "Frontend Software Engineer, Jul 2021 - Apr 2023"
+            ],
+            "elements": [
+                {
+                    "type": "ul",
+                    "elements": [
+                        {
+                            "type": "ul",
+                            "label": [
+                                "Work as a core developer in the Coherent Flow Team"
+                            ],
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Develop and maintain digital forms solution",
+                                        "which serves multinational clients"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Work with developers and the Design System Team",
+                                        "on customized UI theming"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Collaborate with remote backend team to establish API standard"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Assist other project team to develop ad-hoc features on top of core architecture"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ol",
+                            "label": [
+                                "Technology Stack:"
+                            ],
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Frontend:",
+                                        "React,",
+                                        "JSON Schema,",
+                                        "Ant-Design,",
+                                        "Socket.io,",
+                                        "Jest"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Backend:",
+                                        "RESTful API,",
+                                        "Express.js,",
+                                        "Node.js"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Workflow:",
+                                        "Git,",
+                                        "Jira,",
+                                        "Agile,",
+                                        "Waterfall"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

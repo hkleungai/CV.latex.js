@@ -1,0 +1,46 @@
+{
+    "type": "heading",
+    "label": ["Skills"],
+    "elements": [
+        {
+            "type": "subheading",
+            "label": ["Web Frontend"],
+            "elements": [
+                {
+                    "type": "text",
+                    "label": ["Typescript, React, Redux Toolkit, Styled Components, Ant Design"]
+                }
+            ]
+        },
+        {
+            "type": "subheading",
+            "label": ["Backend"],
+            "elements": [
+                {
+                    "type": "text",
+                    "label": ["Node.js, Express.js, MongoDB, SQL, Sqlite"]
+                }
+            ]
+        },
+        {
+            "type": "subheading",
+            "label": ["CI / Workflow"],
+            "elements": [
+                {
+                    "type": "text",
+                    "label": ["Python3, Bash Script, Github Actions, CircleCI"]
+                }                
+            ]
+        },
+        {
+            "type": "subheading",
+            "label": ["General Scripting"],
+            "elements": [
+                {
+                    "type": "text",
+                    "label": ["C / C++, Java"]
+                }
+            ]
+        }
+    ]
+}

@@ -63,11 +63,7 @@
     pdfpagemode=FullScreen,
 }
 
-% \renewcommand{\familydefault}{\sfdefault}
-% \renewcommand{\familydefault}{\rmdefault}
-% \usepackage{Times}
-% \usepackage{mathptmx}
-
+\renewcommand{\familydefault}{\rmdefault}
 
 \definecolor{amethyst}{rgb}{0.6, 0.4, 0.8}
 \definecolor{darkviolet}{rgb}{0.58, 0.0, 0.83}
@@ -76,9 +72,7 @@
 \definecolor{brightblack}{rgb}{0.33, 0.34, 0.32}
 \definecolor{parisgreen}{rgb}{0.31, 0.78, 0.47}
 
-% \newcommand{\subheading}[1]{\subsubsection*{\color{darkviolet}{{#1}}}}
 \newcommand{\subheading}[1]{\subsubsection*{#1}}
-% \newcommand{\heading}[1]{\section*{\color{chromeyellow}{{#1}}}}
 \newcommand{\heading}[1]{\section*{#1}}
 
 \setlength{\fboxrule}{1pt}
@@ -86,7 +80,6 @@
 \begin{document}
 
 \begin{center}
-    % \colorbox{black}{\textbf{\LARGE \color{terminalgreen}{LEUNG Hang Kam, Jimmy}}}
     \textbf{\LARGE LEUNG Hang Kam, Jimmy}
 \end{center}
 
@@ -99,6 +92,8 @@
 \heading{Contact Information}
 	
 \begin{itemize}
+    \setlength\itemsep{0pt}
+    \setlength\parsep{0pt}
     \item \textbf{General:} (852) 9792-3998, \href{mailto:jimmy.leung.hk@outlook.com}{jimmy.leung.hk@outlook.com}
     \item \textbf{Profile:} \href{https://hkleungai.github.io}{\url{https://hkleungai.github.io}}
 	\item \textbf{LinkedIn:} \href{https://www.linkedin.com/in/jimmy-leung-b20253272}{\url{https://www.linkedin.com/in/jimmy-leung-b20253272}}
@@ -107,12 +102,22 @@
 \heading{Summary}
 I am a Software Engineer with 3 years$'$ experience in enterprise-scaled web applications.
 I possess a strong passion for pursuing algorithmic training and contributing to open-source projects.
-I am confident that my expertise can be of great value to your esteemed organization.
+I am confident that my expertise can be of great value to your organization.
 
-$${fetch('./work.experience.json').then(_ => _.json()).then(json_schema_to_latex)}$$
+$${fetch('./work.experience.v2.json').then(_ => _.json()).then(json_schema_to_latex)}$$
 
 $${fetch('./education.history.json').then(_ => _.json()).then(json_schema_to_latex)}$$
 
-$${fetch('./skill.metrics.json').then(_ => _.json()).then(json_schema_to_latex)}$$
+$${fetch('./skill.metrics.v2.json').then(_ => _.json()).then(json_schema_to_latex)}$$
+
+\heading{Languages}
+
+Native Cantonese; Fluent English; Fluent Mandarin
+
+\heading{Remarks}
+
+\subheading{Availability}
+
+Immediately Available
 
 \end{document}
