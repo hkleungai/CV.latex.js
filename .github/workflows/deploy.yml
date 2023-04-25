@@ -11,6 +11,17 @@ jobs:
         with:
           fetch-depth: 0        
 
+      - uses: actions/checkout@v3
+      - name: Add etag
+        run: |
+          node "${{ github.workspace }}/script/make_etag.js";
+          sleep 1;
+
+          git config --global user.name "Jimmy Leung";
+          git config --global user.email "mingfamily@hotmail.com.hk";
+          git add .;
+          git commit --amend --no-edit;
+          
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
