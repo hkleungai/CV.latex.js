@@ -8,7 +8,16 @@
             "elements": [
                 {
                     "type": "text",
-                    "label": ["Typescript, React, Redux Toolkit, Styled Components, Ant Design"]
+                    "label": [
+                        "Typescript (Javascript ES6)",
+                        "React", 
+                        "Redux Toolkit", 
+                        "SCSS / LESS / CSS",
+                        "HTML"
+                    ],
+                    "options": {
+                        "labelDelimiter": ", "
+                    }
                 }
             ]
         },
@@ -18,7 +27,10 @@
             "elements": [
                 {
                     "type": "text",
-                    "label": ["Node.js, Express.js, MongoDB, SQL, Sqlite"]
+                    "label": ["Node.js, Express.js, MongoDB, SQL, Sqlite"],
+                    "options": {
+                        "labelDelimiter": ", "
+                    }
                 }
             ]
         },
@@ -28,17 +40,31 @@
             "elements": [
                 {
                     "type": "text",
-                    "label": ["Python3, Bash Script, Github Actions, CircleCI"]
+                    "label": [
+                        "Bash Script", 
+                        "Github Actions", 
+                        "CircleCI"
+                    ],
+                    "options": {
+                        "labelDelimiter": ", "
+                    }
                 }                
             ]
         },
         {
             "type": "subheading",
-            "label": ["General Scripting"],
+            "label": ["General Programming Language"],
             "elements": [
                 {
                     "type": "text",
-                    "label": ["C / C++, Java"]
+                    "label": [
+                        "C / C++", 
+                        "Java", 
+                        "Python3"
+                    ],
+                    "options": {
+                        "labelDelimiter": ", "
+                    }
                 }
             ]
         }

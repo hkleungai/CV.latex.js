@@ -27,22 +27,28 @@
                                 {
                                     "type": "text",
                                     "label": [
-                                        "Keywords:",
-                                        "Web Scraping,",
-                                        "Supervised Classification,",
+                                        "Web Scraping",
+                                        "Supervised Classification",
                                         "Text Summarization"
-                                    ]
+                                    ],
+                                    "options": {
+                                        "labelPrefix": "Keywords: ",
+                                        "labelDelimiter": ", "
+                                    }
                                 },
                                 {
                                     "type": "text",
                                     "label": [
-                                        "Technology Stack:",
-                                        "TensorFlow,,",
-                                        "Keras,",
-                                        "Selenium,",
-                                        "MongoDB,",
+                                        "TensorFlow",
+                                        "Keras",
+                                        "Selenium",
+                                        "MongoDB",
                                         "Express.js"
-                                    ]
+                                    ],
+                                    "options": {
+                                        "labelPrefix": "Technology Stack: ",
+                                        "labelDelimiter": ", "
+                                    }
                                 }                                
                             ]
                         },

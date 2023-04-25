@@ -12,7 +12,8 @@ export default function json_schema_to_latex(schema, parent = null) {
     if (schema.type === 'spaced-collection') {
         return (schema.elements || []).map(elem => json_schema_to_latex(elem, schema)).join('%\n \\vspace{0.5cm} \\\\ %\n %\n')
     }
-    const label = (schema.label || []).join('\n');
+    const { labelDelimiter = ' ', labelPrefix = '' } = schema.options || {}
+    const label = labelPrefix + (schema.label || []).join(labelDelimiter);
     if (schema.type === 'skill-table') {
         return [
             "\\begin{tabular}{|p{5cm}p{10cm}|l|}",

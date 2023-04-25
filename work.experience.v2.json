@@ -50,38 +50,94 @@
                         {
                             "type": "ol",
                             "label": [
+                                "Achievement:"
+                            ],
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Successfully delivered software solution",
+                                        "to FWD Smart and Coherent Flow projects,",
+                                        "meeting all project requirements and achieving high user satisfaction"
+                                    ]
+
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Seamlessly deliver high-quality composite components,",
+                                        "such as PDF Viewer and Table,",
+                                        "in just two sprints or less."
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Play a key role in helping the team",
+                                        "migrate user management to a secure Single-Sign-On solution within one sprint."
+                                    ]
+                                },
+                                
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Partner with the project team to swiftly integrate a client-side payment gateway,",
+                                        "ensuring a smooth and secure payment experience for users"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "label": [
+                                        "Co-develop with colleagues a serverless API SDK for cross-team microservices, ",
+                                        "enhancing development efficiency for other software teams"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ul",
+                            "label": [
                                 "Technology Stack:"
                             ],
                             "elements": [
                                 {
                                     "type": "text",
                                     "label": [
-                                        "Frontend:",
-                                        "React,",
-                                        "JSON Schema,",
-                                        "Ant-Design,",
-                                        "Socket.io,",
+                                        "React",
+                                        "JSON Schema",
+                                        "Ant-Design",
+                                        "Socket.io",
                                         "Jest"
-                                    ]
+                                    ],
+                                    "options": {
+                                        "labelPrefix": "Frontend: ",
+                                        "labelDelimiter": ", "
+                                    }
                                 },
                                 {
                                     "type": "text",
                                     "label": [
-                                        "Backend:",
-                                        "RESTful API,",
-                                        "Express.js,",
+                                        "RESTful API",
+                                        "Express.js",
                                         "Node.js"
-                                    ]
+                                    ],
+                                    "options": {
+                                        "labelPrefix": "Backend: ",
+                                        "labelDelimiter": ", "
+                                    }
                                 },
                                 {
                                     "type": "text",
                                     "label": [
-                                        "Workflow:",
-                                        "Git,",
-                                        "Jira,",
-                                        "Agile,",
+                                        "Git",
+                                        "Jira",
+                                        "Agile",
                                         "Waterfall"
-                                    ]
+                                    ],
+                                    "options": {
+                                        "labelPrefix": "Workflow: ",
+                                        "labelDelimiter": ", "
+                                    }
                                 }
                             ]
                         }
