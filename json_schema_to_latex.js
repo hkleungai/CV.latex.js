@@ -41,7 +41,6 @@ export default function json_schema_to_latex(schema, parent = null) {
         ].join(' & ') + ' \\\\';
     }
     if (schema.type === 'ol') {
-        console.log('ol', { parent });
         return [
             label,
             /^(ul|ol)$/.test(parent?.type) ? "\\vspace{-.5\\topsep}" : null,
@@ -54,7 +53,6 @@ export default function json_schema_to_latex(schema, parent = null) {
         ].filter(Boolean).join('\n');
     }
     if (schema.type === 'ul') {
-        console.log('ul', { parent }, /^(ul|ol)$/.test(parent?.type));
         return [
             label,
             /^(ul|ol)$/.test(parent?.type) ? "\\vspace{-.5\\topsep}" : null,
