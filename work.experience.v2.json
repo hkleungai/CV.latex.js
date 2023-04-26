@@ -56,7 +56,7 @@
                                 {
                                     "type": "text",
                                     "label": [
-                                        "Successfully delivered software solution",
+                                        "Successfully launch software solutions",
                                         "to FWD Smart and Coherent Flow projects,",
                                         "meeting all project requirements and achieving high user satisfaction"
                                     ]
@@ -67,28 +67,29 @@
                                     "label": [
                                         "Seamlessly deliver high-quality composite components,",
                                         "such as PDF Viewer and Table,",
-                                        "in just two sprints or less."
+                                        "in just two sprints or less"
                                     ]
                                 },
                                 {
                                     "type": "text",
                                     "label": [
                                         "Play a key role in helping the team",
-                                        "migrate user management to a secure Single-Sign-On solution within one sprint."
+                                        "migrate user management to a secure Single-Sign-On solution within one sprint"
                                     ]
                                 },
                                 
                                 {
                                     "type": "text",
                                     "label": [
-                                        "Partner with the project team to swiftly integrate a client-side payment gateway,",
-                                        "ensuring a smooth and secure payment experience for users"
+                                        "Partner with the project team",
+                                        "to incorporate a third-party payment gateway under a tight timeline,",
+                                        "ensuring a smooth payment experience for users"
                                     ]
                                 },
                                 {
                                     "type": "text",
                                     "label": [
-                                        "Co-develop with colleagues a serverless API SDK for cross-team microservices, ",
+                                        "Co-develop with colleagues a client-side API SDK for internal microservices, ",
                                         "enhancing development efficiency for other software teams"
                                     ]
                                 }
