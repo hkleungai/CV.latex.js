@@ -27,7 +27,13 @@
             "elements": [
                 {
                     "type": "text",
-                    "label": ["Node.js, Express.js, MongoDB, SQL, Sqlite"],
+                    "label": [
+                        "Node.js",
+                        "Express.js",
+                        "MongoDB",
+                        "SQL",
+                        "Sqlite"
+                    ],
                     "options": {
                         "labelDelimiter": ", "
                     }
@@ -53,14 +59,14 @@
         },
         {
             "type": "subheading",
-            "label": ["General Programming Language"],
+            "label": ["General tools"],
             "elements": [
                 {
                     "type": "text",
                     "label": [
                         "C / C++", 
-                        "Java", 
-                        "Python3"
+                        "Python3",
+                        "Java"
                     ],
                     "options": {
                         "labelDelimiter": ", "
